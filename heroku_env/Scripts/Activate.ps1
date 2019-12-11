@@ -27,7 +27,7 @@ function global:deactivate ([switch]$NonDestructive) {
 
 deactivate -nondestructive
 
-$env:VIRTUAL_ENV="C:\Users\ryotaro\OneDrive\ottopHackathon\todxApi\todxApi\heroku_env"
+$env:VIRTUAL_ENV="C:\Users\ryotaro\onedrive\ottopHackathon\todxApi\todxApi\heroku_env"
 
 if (! $env:VIRTUAL_ENV_DISABLE_PROMPT) {
     # Set the prompt to include the env name

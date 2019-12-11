@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\ryotaro\OneDrive\ottopHackathon\todxApi\todxApi\heroku_env"
+VIRTUAL_ENV="C:\Users\ryotaro\onedrive\ottopHackathon\todxApi\todxApi\heroku_env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
