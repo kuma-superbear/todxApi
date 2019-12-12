@@ -62,7 +62,7 @@ def get_gurunabi_api(latitude, longitude, distance):
 
 
 def extract_gurunabi(json_data):
-  i = 0
+  i = 0 
   gurunabi_dic = {}
   gurunabi_list = []
 
@@ -74,7 +74,7 @@ def extract_gurunabi(json_data):
     # mili second
     stay_time = '360000'
     description = ''
-    category = '飲食店'
+    category = 'food'
     gurunabi_dic[i] = {"name" : name, "url" : url, "latitude" : latitude, "longitude" : longitude, 
     "category" : category, "stay_time" : stay_time, "description" : description }
     gurunabi_list.append(gurunabi_dic[i])
@@ -117,7 +117,7 @@ def extract_ottop(json_data):
     # mili second
     stay_time = '360000'
     description = ''
-    category = '観光地'
+    category = 'spot'
     ottop_dic[i] = {"name" : name, "url" : url, "latitude" : latitude, "longitude" : longitude,
     "category" : category, "stay_time" : stay_time, "description" : description }
     ottop_list.append(ottop_dic[i])
