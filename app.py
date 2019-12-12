@@ -39,12 +39,12 @@ def get_spot_information():
   # ms
   seconds = request.args.get("seconds")
   depature_time = request.args.get("departure_time")
-  response = get_spot.recommend_spot(latitude, longitude, seconds, depature_time)
+  response_body = get_spot.recommend_spot(latitude, longitude, seconds, depature_time)
+  response = jsonify(response_body)
   response.headers['Access-Control-Allow-Origin'] = '*'
-  
   if not response:
     abort(404, {'code': 'Not Found', 'message': 'spot not found'})
-  return jsonify(response)
+  return response
 
 
 # get route
