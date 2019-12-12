@@ -11,8 +11,8 @@ import callApi
 import get_spot
 
 app = Flask(__name__)
-app.config["JSON_AS_ASCII"] = False
 CORS(app)
+app.config["JSON_AS_ASCII"] = False
 
 # for test
 @app.route('/')
