@@ -6,7 +6,6 @@ import codecs
 import json
 import math
 
-
 def recommend_spot(latitude, longitude, seconds, departure_time):
   recommend_list = []
   distance = caluculate_distance(float(seconds))

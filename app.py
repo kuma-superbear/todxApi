@@ -3,13 +3,16 @@ import io
 import time
 import numpy as np
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory, session, jsonify, abort
+from flask_cors import CORS
 from werkzeug import secure_filename
 import json
 # call other api
 import callApi
 import get_spot
+
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False
+CORS(app)
 
 # for test
 @app.route('/')
