@@ -3,7 +3,7 @@ import io
 import time
 import numpy as np
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory, session, jsonify, abort
-from flask_cors import CORS
+#from flask_cors import CORS
 from werkzeug import secure_filename
 import json
 # call other api
@@ -12,8 +12,8 @@ import get_spot
 
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False
-app.config['CORS_HEADERS'] = 'Content-Type'
-CORS(app)
+#app.config['CORS_HEADERS'] = 'Content-Type'
+#CORS(app)
 
 # 追加
 @app.after_request
@@ -33,12 +33,14 @@ def index():
 # get spot recommend
 @app.route('/get/recommend', methods=['GET'])
 def get_spot_information():
+
   latitude = request.args.get("latitude")
   longitude = request.args.get("longitude")
   # ms
   seconds = request.args.get("seconds")
   depature_time = request.args.get("departure_time")
   response = get_spot.recommend_spot(latitude, longitude, seconds, depature_time)
+  response.headers['Access-Control-Allow-Origin'] = '*'
   
   if not response:
     abort(404, {'code': 'Not Found', 'message': 'spot not found'})
