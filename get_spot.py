@@ -30,7 +30,7 @@ def caluculate_distance(seconds):
 
 
 def get_gurunabi_api(latitude, longitude, distance):
-  apikey = '21d4e3248fb7645bb26293edd8f81beb'
+  apikey = '*****'
   url = 'https://api.gnavi.co.jp/RestSearchAPI/v3/?'
 
   if distance < (0.3 + 0.5)/2:
